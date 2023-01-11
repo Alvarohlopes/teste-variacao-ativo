@@ -27,6 +27,8 @@ export class AppComponent implements OnInit, OnDestroy {
   newActiveSelected: TableModel[] = [];
   showData: boolean = false;
 
+  loader: boolean = false;
+
   setTypeView: string = 'table';
 
   constructor(
@@ -37,6 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getActive(active: any): void {
     this.showData = false;
+    this.loader = true;
     this.newActiveSelected = [];
 
     this.apiServices.GetActiveVariation(active.value)
@@ -49,6 +52,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
         if (this.newActiveSelected.length > 0) {
           this.showData = true;
+          this.loader = false;
+          
         }
       });
   }

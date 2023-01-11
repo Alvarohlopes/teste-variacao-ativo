@@ -63,15 +63,15 @@ export class ActiveChartComponent implements OnInit {
 
     this.lineChartData = [{
       data: values,
-      label: 'Valor',
+      label: 'Valor(R$)  ',
     },
     {
       data: variation1,
-      label: 'Variação em relaçào a D-1',
+      label: 'Variação em relaçào a D-1(%)  ',
     },
     {
       data: variation2,
-      label: 'Variação em relação a primeira data',
+      label: 'Variação em relação a primeira data(%)  ',
     }];
 
   }

@@ -13,11 +13,11 @@
     </div>
 
     <div *ngIf="showData" class="area-buttons">
-        <button (click)="setTypeView = 'table'" mat-icon-button aria-label="Tabela"
+        <button (click)="setTypeView = 'table'" mat-icon-button aria-label="Tabela" title="Tabela" alt="Tabela"
             [color]="setTypeView === 'table' ? 'primary': 'accent'">
             <mat-icon>table_chart</mat-icon>
         </button>
-        <button (click)="setTypeView = 'chart'" mat-icon-button aria-label="Grafico"
+        <button (click)="setTypeView = 'chart'" mat-icon-button aria-label="Grafico" title="Grafico" alt="Grafico"
             [color]="setTypeView === 'chart' ? 'primary': 'accent'">
             <mat-icon>analytics</mat-icon>
         </button>
@@ -28,6 +28,12 @@
 
     <app-active-chart *ngIf="showData && setTypeView === 'chart'"
         [selectedActive]="newActiveSelected"></app-active-chart>
+
+    <div class="select-active-text" *ngIf="!showData && !loader">
+        <h3>Selecione o Ativo.</h3>
+    </div>
+
+    <app-loading *ngIf="loader"></app-loading>
 </div>
 
 

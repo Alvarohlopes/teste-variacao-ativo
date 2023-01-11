@@ -16,6 +16,7 @@ import { registerLocaleData } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NgChartsModule } from 'ng2-charts';
+import { LoadingComponent } from './components/loading/loading.component';
 
 registerLocaleData(localePt);
 
@@ -36,7 +37,8 @@ export const customCurrencyMaskConfig = {
   declarations: [
     AppComponent,
     ActiveChartComponent,
-    ActiveTableComponent
+    ActiveTableComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
