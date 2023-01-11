@@ -1,0 +1,38 @@
+<div class="content">
+    <div class="filter-active">
+        <mat-form-field appearance="outline">
+            <mat-label>
+                Selecione o ativo
+            </mat-label>
+            <mat-select [(ngModel)]="activeSelected" name="food" (selectionChange)="getActive($event)">
+                <mat-option *ngFor="let active of actives" [value]="active.value">
+                    {{active.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="showData" class="area-buttons">
+        <button (click)="setTypeView = 'table'" mat-icon-button aria-label="Tabela"
+            [color]="setTypeView === 'table' ? 'primary': 'accent'">
+            <mat-icon>table_chart</mat-icon>
+        </button>
+        <button (click)="setTypeView = 'chart'" mat-icon-button aria-label="Grafico"
+            [color]="setTypeView === 'chart' ? 'primary': 'accent'">
+            <mat-icon>analytics</mat-icon>
+        </button>
+    </div>
+
+    <app-active-table *ngIf="showData && setTypeView === 'table'"
+        [selectedActive]="newActiveSelected"></app-active-table>
+
+    <app-active-chart *ngIf="showData && setTypeView === 'chart'"
+        [selectedActive]="newActiveSelected"></app-active-chart>
+</div>
+
+
+<router-outlet></router-outlet>
+
+<footer>
+    Alvaro Lopes | (21) 9901.33590 | contato@alvarolopes.com.br
+</footer>

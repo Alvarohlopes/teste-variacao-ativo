@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #1d1a29;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content {
+    padding: 30px;
+    width: calc(100% - 60px);
+    min-width: 840px;
+    max-width: 840px;
+    min-height: calc(100vh - 120px);
+
+    @media screen and (max-width: '1080px') {
+        min-width: initial;
+    }
+}
+
+footer{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+}
